@@ -203,10 +203,35 @@ h1 {
         border-color: var(--emerald);
     }
 
-.project-grid, .stats-grid, .contact-grid {
+.stats-grid, .contact-grid {
     display: grid;
     gap: 20px;
 }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.result-card,
+.skill-card,
+.timeline-card,
+.contact-card {
+    min-width: 0;
+}
+
+.project-domain,
+.result-label,
+.project-card p,
+.project-card li {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+    .project-grid > * {
+        min-width: 0;
+    }
 
 @media (max-width: 768px) {
     .project-grid {
@@ -550,13 +575,6 @@ ul {
     margin: 0 auto;
 }
 
-.project-results {
-    margin: 2.5rem 0;
-}
-
-.project-details {
-    margin: 2.5rem 0;
-}
 
 .contributions {
     margin-top: 2.5rem;
@@ -671,4 +689,73 @@ ul {
     text-align: center;
     color: var(--muted);
     line-height: 1.8;
+}
+
+.project-card,
+.timeline-card,
+.skill-card,
+.contact-card {
+    min-width: 0;
+}
+
+.tech-stack {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.project-card p {
+    overflow-wrap: break-word;
+}
+
+details {
+    width: 100%;
+}
+
+    details ul {
+        padding-left: 1.2rem;
+    }
+
+
+@media (max-width: 768px) {
+
+    .project-results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .project-results {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .project-results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .project-results {
+        grid-template-columns: 1fr;
+    }
+}
+
+.result-card {
+    min-width: 0;
+}
+
+.result-label {
+    overflow-wrap: break-word;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
 }
